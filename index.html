@@ -25,6 +25,20 @@
         .container {
             padding: 20px;
         }
+        .button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #5b4c63;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #4a3a52;
+        }
     </style>
 </head>
 <body>
@@ -36,7 +50,13 @@
     </header>
     <div class="container">
         <p>Welcome to Meditation Now, your haven for peace and mindfulness. Explore our resources to deepen your meditation practice and enhance your well-being.</p>
-        <button onclick="location.href='meditation-resources.html'">Get Started</button>
+        <button class="button" onclick="location.href='about.html'">About Me</button>
+        <button class="button" onclick="location.href='contact.html'">Contact Info</button>
+        <button class="button" onclick="location.href='data-visualization.html'">Data Visualization</button>
+        <button class="button" onclick="location.href='interactive.html'">Interactive Meditation</button>
     </div>
+    <footer>
+        <p>&copy; 2024 Meditation Now. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
