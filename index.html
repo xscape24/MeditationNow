@@ -10,26 +10,32 @@
             background-color: #d0bcdc;
             color: #5b4c63;
             font-family: Arial, sans-serif;
-            text-align: center;
             margin: 0;
             padding: 0;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
         }
         h1 {
             font-family: 'Kaushan Script', cursive;
             font-size: 3em;
-            margin: 20px 0;
+            margin: 10px 0;
         }
         .logo {
-            margin: 50px 0;
+            margin: 20px 0;
         }
-        .container {
-            padding: 20px;
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #5b4c63;
+            padding: 15px 0;
         }
         .button {
-            margin: 10px;
+            margin: 0 10px;
             padding: 10px 20px;
             font-size: 1em;
-            background-color: #5b4c63;
+            background-color: #4a3a52; /* Darker accent color */
             color: #ffffff;
             border: none;
             border-radius: 5px;
@@ -37,7 +43,16 @@
             transition: background-color 0.3s;
         }
         .button:hover {
-            background-color: #4a3a52;
+            background-color: #3b2a43; /* Darker shade on hover */
+        }
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+        footer {
+            margin: 20px 0;
+            padding: 10px;
+            font-size: 0.9em;
         }
     </style>
 </head>
@@ -48,13 +63,19 @@
         </div>
         <h1>Meditation Now</h1>
     </header>
-    <div class="container">
-        <p>Welcome to Meditation Now, your haven for peace and mindfulness. Explore our resources to deepen your meditation practice and enhance your well-being.</p>
+    
+    <!-- Navigation Bar -->
+    <nav>
         <button class="button" onclick="location.href='about.html'">About Me</button>
         <button class="button" onclick="location.href='contact.html'">Contact Info</button>
         <button class="button" onclick="location.href='data-visualization.html'">Data Visualization</button>
         <button class="button" onclick="location.href='interactive.html'">Interactive Meditation</button>
+    </nav>
+
+    <div class="container">
+        <p>Welcome to Meditation Now, your haven for peace and mindfulness. Explore our resources to deepen your meditation practice and enhance your well-being.</p>
     </div>
+    
     <footer>
         <p>&copy; 2024 Meditation Now. All Rights Reserved.</p>
     </footer>
