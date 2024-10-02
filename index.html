@@ -4,88 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meditation Now</title>
-    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to CSS file if you have one -->
     <style>
         body {
-            background-color: #d0bcdc;
-            color: #5b4c63;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
         }
         header {
-            text-align: center;
-            padding: 20px;
-        }
-        h1 {
-            font-family: 'Kaushan Script', cursive;
-            font-size: 3em;
-            margin: 10px 0;
-        }
-        .logo {
-            margin: 20px 0;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #5b4c63;
-            padding: 15px 0;
-        }
-        .button {
-            margin: 0 10px;
-            padding: 10px 20px;
-            font-size: 1em;
-            background-color: #4a3a52; /* Darker accent color */
-            color: #d0bcdc; /* Lighter text color */
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .button:hover {
-            background-color: #3b2a43; /* Darker shade on hover */
-        }
-        .container {
-            padding: 20px;
+            background: #4CAF50;
+            color: white;
+            padding: 10px 0;
             text-align: center;
         }
-        .blurb {
-            font-size: 1.2em;
-            margin: 20px 0;
-            padding: 10px;
-            background-color: #e0c6e4; /* Light accent background */
-            border-radius: 10px;
-            display: inline-block;
+        section {
+            padding: 20px;
+            margin: 10px;
+            background: white;
+            border-radius: 8px;
         }
         footer {
-            margin: 20px 0;
+            text-align: center;
             padding: 10px;
-            font-size: 0.9em;
-            text-align: center; /* Centered footer text */
+            background: #4CAF50;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .benefits {
+            list-style-type: none;
+            padding: 0;
+        }
+        .benefits li {
+            margin: 10px 0;
         }
     </style>
 </head>
 <body>
-    <nav>
-        <button class="button" onclick="location.href='about.html'">About Me</button>
-        <button class="button" onclick="location.href='contact.html'">Contact Info</button>
-        <button class="button" onclick="location.href='data-visualization.html'">Data Visualization</button>
-        <button class="button" onclick="location.href='interactive.html'">Interactive Meditation</button>
-    </nav>
-
     <header>
-        <div class="logo">
-            <img src="671f019d2ab34a139398f8d2847ef111-free.png" alt="Meditation Now Logo" />
-        </div>
+        <h1>Meditation Now</h1>
+        <p>Find peace and mindfulness in your daily life</p>
     </header>
-    
-    <div class="container">
-        <p class="blurb">Discover your inner peace with Meditation Now. We provide resources and guidance to help you cultivate mindfulness, reduce stress, and enhance your overall well-being. Join our community and embark on your meditation journey today!</p>
-        <p>Welcome to Meditation Now, your haven for peace and mindfulness. Explore our resources to deepen your meditation practice and enhance your well-being.</p>
-    </div>
-    
+
+    <section>
+        <h2>Welcome to Meditation Now</h2>
+        <p>Meditation is a practice that allows you to focus your mind and achieve a state of calmness and clarity.</p>
+    </section>
+
+    <section>
+        <h2>Benefits of Meditation</h2>
+        <ul class="benefits">
+            <li>Reduces stress and anxiety</li>
+            <li>Improves concentration and attention</li>
+            <li>Enhances self-awareness</li>
+            <li>Promotes emotional health</li>
+            <li>Can generate feelings of kindness and compassion</li>
+        </ul>
+    </section>
+
     <footer>
-        <p>&copy; 2024 Meditation Now. All Rights Reserved.</p>
+        <p>&copy; 2024 Meditation Now | All Rights Reserved</p>
     </footer>
 </body>
 </html>
