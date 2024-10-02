@@ -35,9 +35,10 @@ nav {
 .container {
     padding: 20px;
     text-align: center;
-    background-color: #E0C9E4; /* Soft lavender background for the container */
+    background-color: #d0bcdc; /* Match background color */
     border-radius: 10px; /* Rounded corners */
 }
+
 
 footer {
     margin: 20px 0;
