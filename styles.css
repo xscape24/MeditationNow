@@ -5,20 +5,28 @@ body {
     font-family: 'Lato', sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Ensures padding and margin don't affect layout */
 }
+
 header {
     text-align: center;
     padding: 20px;
 }
+
 .logo {
     margin: 20px 0;
+    max-width: 100%;
+    height: auto;
 }
+
 nav {
     display: flex;
     justify-content: center;
     background-color: #5b4c63; /* Dark purple */
     padding: 15px 0;
+    flex-wrap: wrap; /* Ensures nav buttons stack on smaller screens */
 }
+
 .button {
     margin: 0 10px;
     padding: 10px 20px;
@@ -31,14 +39,18 @@ nav {
     transition: background-color 0.3s;
     font-family: 'Lato', sans-serif;
 }
+
 .button:hover {
     background-color: #4a3a52;
 }
+
 .container {
     padding: 20px;
     text-align: center;
     background-color: #d0bcdc; /* Light lavender */
     border-radius: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 footer {
@@ -59,11 +71,47 @@ footer {
 /* Custom styling for the timeline */
 #meditationTimeline {
     margin-top: 30px;
+    width: 100%; /* Ensure canvas is responsive */
+    height: auto;
+    max-width: 100%; /* Avoid overflow */
 }
 
+/* Details Section */
 #eraDetails {
     margin-top: 20px;
     padding: 20px;
     background-color: #E0C9E4;
     border-radius: 5px;
+}
+
+/* Make elements more responsive on smaller screens */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    header img {
+        width: 80%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column; /* Stack buttons vertically */
+    }
+
+    .button {
+        margin: 5px 0;
+        width: 100%;
+    }
+    
+    #meditationTimeline {
+        max-height: 300px; /* Limit height on small screens */
+    }
 }
