@@ -18,7 +18,7 @@ const getChartData = (eraFilter) => {
     return {
         labels: filteredData.map(item => item.year),
         datasets: [{
-            label: 'Popularity of Meditation Over Time',
+            label: 'Meditation Practices Through History', // Updated chart label
             data: filteredData.map(item => item.popularity),
             fill: false,
             borderColor: '#4a3a52',
@@ -80,6 +80,10 @@ let chart = new Chart(document.getElementById('meditationTimeline').getContext('
                     stepSize: 10
                 }
             }
+        },
+        title: {
+            display: true,
+            text: 'Meditation Practices Through History' // Updated chart title
         }
     }
 });
