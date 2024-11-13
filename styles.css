@@ -59,3 +59,43 @@ footer {
     border-radius: 5px;
 }
 
+.container {
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+}
+
+header h1 {
+    font-family: 'Kaushan Script', cursive;
+    color: #5b4c63;
+    margin: 20px 0;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #4a3a52;
+}
+
+canvas {
+    margin-top: 20px;
+    background-color: #E0C9E4;
+    border-radius: 8px;
+}
+
+.filter-controls {
+    margin-top: 20px;
+}
+
+.filter-controls label {
+    font-size: 1.1em;
+    margin-right: 10px;
+    color: #5b4c63;
+}
+
+#filterSelect {
+    padding: 8px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #4a3a52;
+}
+
