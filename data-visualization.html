@@ -16,7 +16,7 @@
     </nav>
 
     <header>
-        <h1 class="main-title">Meditation Through History</h1>
+        <h1>Meditation Through History</h1>
         <p>Explore the journey of meditation from its ancient roots to its rise in modern-day popularity.</p>
     </header>
 
@@ -24,14 +24,16 @@
         <!-- Timeline Chart Container -->
         <canvas id="meditationTimeline" width="800" height="400"></canvas>
         
-      <div class="filter-section">
-    <label for="eraFilter" class="filter-label">Filter by Era:</label>
-    <select id="eraFilter" class="filter-dropdown" onchange="updateTimeline()"> <!-- Changed this to trigger updateTimeline -->
-        <option value="ancient">Ancient</option>
-        <option value="medieval">Medieval</option>
-        <option value="modern">Modern</option>
-    </select>
-</div>
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <label for="eraFilter">Filter by Era:</label>
+            <select id="eraFilter" onchange="filterData()">
+                <option value="all">All Eras</option>
+                <option value="ancient">Ancient</option>
+                <option value="medieval">Medieval</option>
+                <option value="modern">Modern</option>
+            </select>
+        </div>
         
         <!-- Description Section for Details on Demand -->
         <div id="detailSection" class="third-color">
@@ -47,3 +49,4 @@
     <script src="data-visualization.js"></script>
 </body>
 </html>
+
