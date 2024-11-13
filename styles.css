@@ -1,27 +1,26 @@
 body {
     background-color: #d0bcdc;
     color: #5b4c63;
+
     font-family: 'Lato', sans-serif;
+
+
     margin: 0;
     padding: 0;
 }
-
 header {
     text-align: center;
     padding: 20px;
 }
-
 .logo {
     margin: 20px 0;
 }
-
 nav {
     display: flex;
     justify-content: center;
     background-color: #5b4c63; /* Original nav bar color */
     padding: 15px 0;
 }
-
 .button {
     margin: 0 10px;
     padding: 10px 20px;
@@ -34,17 +33,16 @@ nav {
     transition: background-color 0.3s;
     font-family: 'Lato', sans-serif;
 }
-
 .button:hover {
     background-color: #4a3a52; /* Same darker color on hover */
 }
-
 .container {
     padding: 20px;
     text-align: center;
     background-color: #d0bcdc; /* Match background color */
     border-radius: 10px; /* Rounded corners */
 }
+
 
 footer {
     margin: 20px 0;
@@ -59,14 +57,4 @@ footer {
     background-color: #E0C9E4; /* Soft lavender */
     padding: 10px;
     border-radius: 5px;
-}
-
-/* Canvas styling for the data visualization page */
-#meditationTimeline {
-    margin-top: 30px;
-    display: block;
-    width: 100%;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
 }
