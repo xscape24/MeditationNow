@@ -1,19 +1,20 @@
-// Sample Data: Data for each era, replace this with real data
+// Updated Data: Data for each era, now reflecting the key events in meditation history
 const data = {
     "ancient": [
-        { year: 3000, event: "First recorded meditation", popularity: 10 },
-        { year: 1000, event: "Meditation in early Buddhism", popularity: 30 },
-        { year: 500, event: "Meditation spread in India", popularity: 40 },
+        { year: -3000, event: "First recorded meditation practices in India", popularity: 10 },
+        { year: -500, event: "Meditation becomes integral to early Buddhism", popularity: 30 },
+        { year: -100, event: "Meditation spreads throughout Asia", popularity: 40 },
     ],
     "medieval": [
-        { year: 1000, event: "Buddhism spreads to China", popularity: 60 },
-        { year: 1200, event: "Zen Buddhism in Japan", popularity: 70 },
-        { year: 1500, event: "Spread of meditation to Europe", popularity: 50 },
+        { year: 600, event: "Meditation spreads to China via Buddhism", popularity: 50 },
+        { year: 1200, event: "Zen Buddhism spreads meditation to Japan", popularity: 60 },
+        { year: 1500, event: "Meditation reaches Europe via trade routes", popularity: 45 },
     ],
     "modern": [
-        { year: 1900, event: "Mindfulness introduced in the West", popularity: 80 },
-        { year: 1950, event: "Meditation becomes mainstream", popularity: 90 },
-        { year: 2024, event: "Meditation apps gain popularity", popularity: 100 },
+        { year: 1900, event: "Meditation introduced to the West with mindfulness", popularity: 60 },
+        { year: 1950, event: "Counterculture movement embraces meditation", popularity: 70 },
+        { year: 2000, event: "Meditation apps and platforms make meditation mainstream", popularity: 90 },
+        { year: 2024, event: "Millions of meditation app users worldwide", popularity: 100 },
     ]
 };
 
@@ -32,7 +33,7 @@ function updateTimeline() {
     const chartData = {
         labels: eraData.map(item => item.year),
         datasets: [{
-            label: 'Meditation Popularity',
+            label: 'Meditation Popularity Over Time',
             data: eraData.map(item => item.popularity),
             backgroundColor: '#d0bcdc', // Light lavender
             borderColor: '#5b4c63', // Dark purple
@@ -67,7 +68,17 @@ function updateTimeline() {
                     }
                 },
                 responsive: true,
-                maintainAspectRatio: false
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                const event = eraData[tooltipItem.dataIndex].event;
+                                return `${event}: ${tooltipItem.raw}% popularity`;
+                            }
+                        }
+                    }
+                }
             }
         });
     }
