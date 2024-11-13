@@ -1,11 +1,11 @@
 // Meditation Data: Timeline Events (with popularity over time)
 const meditationHistory = [
-    { year: -3000, event: "Ancient Meditation Practices in India", popularity: 10, era: "ancient" },
-    { year: -500, event: "Buddha Introduces Meditation as a Path to Enlightenment", popularity: 20, era: "ancient" },
-    { year: 500, event: "Meditation Spreads Through China and Japan", popularity: 40, era: "medieval" },
-    { year: 1500, event: "Renaissance Europe Begins Embracing Eastern Practices", popularity: 30, era: "medieval" },
-    { year: 1900, event: "Modern Mindfulness Meditation Becomes Popular in the West", popularity: 50, era: "modern" },
-    { year: 2020, event: "Meditation Practices Spread Through Apps and Online Platforms", popularity: 90, era: "modern" }
+    { year: -3000, event: "Ancient Meditation Practices in India", popularity: 10, era: "ancient", description: "Meditation practices were rooted in early spiritual traditions in India." },
+    { year: -500, event: "Buddha Introduces Meditation as a Path to Enlightenment", popularity: 20, era: "ancient", description: "Buddha’s teachings on meditation began to spread across Asia, emphasizing mindfulness." },
+    { year: 500, event: "Meditation Spreads Through China and Japan", popularity: 40, era: "medieval", description: "Meditation practices are integrated into Chinese and Japanese Buddhist traditions." },
+    { year: 1500, event: "Renaissance Europe Begins Embracing Eastern Practices", popularity: 30, era: "medieval", description: "European intellectuals begin to show interest in Eastern philosophy and meditation." },
+    { year: 1900, event: "Modern Mindfulness Meditation Becomes Popular in the West", popularity: 50, era: "modern", description: "Mindfulness meditation starts gaining attention in the West as a form of stress management." },
+    { year: 2020, event: "Meditation Practices Spread Through Apps and Online Platforms", popularity: 90, era: "modern", description: "Meditation apps like Headspace and Calm bring meditation practices to a global audience." }
 ];
 
 // Prepare Data for Chart.js
@@ -36,13 +36,26 @@ let chart = new Chart(document.getElementById('meditationTimeline').getContext('
     data: getChartData('all'),
     options: {
         responsive: true,
+        onClick: function (event, elements) {
+            if (elements.length > 0) {
+                const index = elements[0].index;
+                const selectedEvent = meditationHistory[index];
+                
+                // Drill down and show details
+                document.getElementById("eraTitle").textContent = `Event: ${selectedEvent.event}`;
+                document.getElementById("eraDescription").textContent = `${selectedEvent.description} Year: ${selectedEvent.year}, Popularity: ${selectedEvent.popularity}`;
+            }
+        },
         plugins: {
             tooltip: {
                 callbacks: {
                     title: function (tooltipItem) {
                         const item = meditationHistory.find(event => event.year === tooltipItem[0].label);
-                        document.getElementById("eraTitle").textContent = `Event: ${item.event}`;
-                        document.getElementById("eraDescription").textContent = `Year: ${item.year}, Popularity: ${item.popularity}`;
+                        return `Event: ${item.event}`;
+                    },
+                    afterLabel: function (tooltipItem) {
+                        const item = meditationHistory.find(event => event.year === tooltipItem.label);
+                        return `Description: ${item.description}`;
                     }
                 }
             }
@@ -77,5 +90,4 @@ function filterData() {
     chart.data = getChartData(eraFilter);
     chart.update();
 }
-
 
