@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     background-color: #d0bcdc;
     color: #5b4c63;
@@ -15,7 +16,7 @@ header {
 nav {
     display: flex;
     justify-content: center;
-    background-color: #5b4c63; /* Original nav bar color */
+    background-color: #5b4c63; /* Dark purple */
     padding: 15px 0;
 }
 .button {
@@ -23,7 +24,7 @@ nav {
     padding: 10px 20px;
     font-size: 1em;
     background-color: #4a3a52; /* Darker accent color */
-    color: #d0bcdc; /* Lighter text color */
+    color: #d0bcdc; /* Light lavender */
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -31,33 +32,38 @@ nav {
     font-family: 'Lato', sans-serif;
 }
 .button:hover {
-    background-color: #4a3a52; /* Same darker color on hover */
+    background-color: #4a3a52;
 }
 .container {
     padding: 20px;
     text-align: center;
-    background-color: #d0bcdc; /* Match background color */
-    border-radius: 10px; /* Rounded corners */
+    background-color: #d0bcdc; /* Light lavender */
+    border-radius: 10px;
 }
 
 footer {
     margin: 20px 0;
     padding: 10px;
     font-size: 0.9em;
-    text-align: center; /* Centered footer text */
+    text-align: center;
     font-family: 'Lato', sans-serif;
 }
 
-/* New third color */
+/* Third color */
 .third-color {
     background-color: #E0C9E4; /* Soft lavender */
     padding: 10px;
     border-radius: 5px;
 }
 
-/* Canvas styling */
-canvas {
-    max-width: 100%;
-    height: auto;
+/* Custom styling for the timeline */
+#meditationTimeline {
+    margin-top: 30px;
+}
+
+#eraDetails {
     margin-top: 20px;
+    padding: 20px;
+    background-color: #E0C9E4;
+    border-radius: 5px;
 }
