@@ -1,147 +1,72 @@
-/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #d0bcdc;
+    color: #5b4c63;
+    font-family: 'Lato', sans-serif;
     margin: 0;
     padding: 0;
-    color: #333;
 }
 
 header {
-    background-color: #f0f0f0; /* Lighter header background for homepage */
-    color: #5b4c63; /* Darker text for visibility */
     text-align: center;
     padding: 20px;
+}
+
+.logo {
+    margin: 20px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #5b4c63; /* Original nav bar color */
+    padding: 15px 0;
+}
+
+.button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #4a3a52; /* Darker accent color */
+    color: #d0bcdc; /* Lighter text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Lato', sans-serif;
+}
+
+.button:hover {
+    background-color: #4a3a52; /* Same darker color on hover */
+}
+
+.container {
+    padding: 20px;
+    text-align: center;
+    background-color: #d0bcdc; /* Match background color */
+    border-radius: 10px; /* Rounded corners */
 }
 
 footer {
-    background-color: #f0f0f0; /* Match header color */
-    color: #5b4c63;
-    text-align: center;
+    margin: 20px 0;
     padding: 10px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+    font-size: 0.9em;
+    text-align: center; /* Centered footer text */
+    font-family: 'Lato', sans-serif;
 }
 
-h1, h3, p {
-    margin: 0;
-}
-
-/* Navigation Styles */
-nav {
-    background-color: #e0c9e4; /* Soft lavender */
-    color: #5b4c63;
-    text-align: center;
-    padding: 10px;
-    font-size: 1.1em;
-    margin-bottom: 30px;
-}
-
-button {
-    background-color: #e0c9e4;
-    color: #5b4c63;
-    border: none;
-    padding: 10px 20px;
-    margin: 5px;
-    font-size: 1em;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #d1a5c5;
-}
-
-/* Main Title Styles */
-.main-title {
-    font-family: 'Kaushan Script', cursive;
-    color: #5b4c63;
-    font-size: 2.5em;
-    margin-top: 20px;
-}
-
-/* Container Styles */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Filter Section Styles */
-.filter-section {
-    margin: 20px;
-    text-align: center;
-}
-
-.filter-label {
-    font-size: 1.2em;
-    color: #5b4c63;
-    margin-right: 10px;
-}
-
-.filter-dropdown {
-    background-color: #e0c9e4;
-    color: #5b4c63;
-    border: 1px solid #5b4c63;
-    padding: 8px;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-}
-
-.filter-dropdown:hover {
-    background-color: #d1a5c5;
-}
-
-/* Timeline Section (on Data Visualization Page) */
-#meditationTimeline {
-    margin: 0 auto;
-    display: block;
-    margin-bottom: 30px;
-}
-
-/* Description Section */
+/* New third color */
 .third-color {
-    background-color: #E0C9E4;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #E0C9E4; /* Soft lavender */
+    padding: 10px;
+    border-radius: 5px;
 }
 
-#eraTitle {
-    font-size: 1.8em;
-    color: #5b4c63;
-    margin-bottom: 10px;
-}
-
-#eraDescription {
-    font-size: 1.1em;
-    color: #333;
-    line-height: 1.6;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .container {
-        padding: 10px;
-    }
-    
-    .main-title {
-        font-size: 2em;
-    }
-
-    #meditationTimeline {
-        width: 100%;
-    }
-
-    .filter-dropdown {
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    #eraTitle {
-        font-size: 1.5em;
-    }
+/* Canvas styling for the data visualization page */
+#meditationTimeline {
+    margin-top: 30px;
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
