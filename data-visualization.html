@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization - Meditation Benefits</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Load Chart.js for data visualization -->
+</head>
+<body>
+    <nav>
+        <button class="button" onclick="location.href='index.html'">Home</button>
+        <button class="button" onclick="location.href='about.html'">About Me</button>
+        <button class="button" onclick="location.href='contact.html'">Contact Info</button>
+        <button class="button" onclick="location.href='interactive.html'">Interactive Meditation</button>
+    </nav>
+
+    <header>
+        <h1>Meditation Benefits Visualization</h1>
+        <p>Explore the benefits of meditation through interactive data visualization.</p>
+    </header>
+
+    <div class="container">
+        <canvas id="meditationChart"></canvas>
+        <div class="filter-controls">
+            <label for="filterSelect">Select Benefit Category:</label>
+            <select id="filterSelect" onchange="updateChart()">
+                <option value="all">All Benefits</option>
+                <option value="mental">Mental Health</option>
+                <option value="physical">Physical Health</option>
+                <option value="emotional">Emotional Health</option>
+            </select>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Meditation Now. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const chartData = {
+            all: {
+                labels: ["Mental Clarity", "Stress Reduction", "Improved Focus", "Reduced Anxiety", "Better Sleep", "Physical Relaxation"],
+                data: [80, 75, 90, 60, 85, 70]
+            },
+            mental: {
+                labels: ["Mental Clarity", "Improved Focus"],
+                data: [80, 90]
+            },
+            physical: {
+                labels: ["Stress Reduction", "Better Sleep", "Physical Relaxation"],
+                data: [75, 85, 70]
+            },
+            emotional: {
+                labels: ["Reduced Anxiety"],
+                data: [60]
+            }
+        };
+
+        const ctx = document.getElementById('meditationChart').getContext('2d');
+        let meditationChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: chartData.all.labels,
+                datasets: [{
+                    label: 'Benefit Score',
+                    data: chartData.all.data,
+                    backgroundColor: '#5b4c63',
+                    borderColor: '#4a3a52',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+        function updateChart() {
+            const selectedCategory = document.getElementById('filterSelect').value;
+            meditationChart.data.labels = chartData[selectedCategory].labels;
+            meditationChart.data.datasets[0].data = chartData[selectedCategory].data;
+            meditationChart.update();
+        }
+    </script>
+</body>
+</html>
