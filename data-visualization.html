@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meditation Now - Data Visualization</title>
+    <title>Data Visualization - Meditation Timeline</title>
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js CDN -->
 </head>
 <body>
     <nav>
@@ -21,27 +21,33 @@
         <div class="logo">
             <img src="671f019d2ab34a139398f8d2847ef111-free (1).png" alt="Meditation Now Logo" style="width: 300px; height: auto;" />
         </div>
-        <h1>Meditation Throughout History</h1>
     </header>
-    
+
     <div class="container">
-        <p>Explore the journey of meditation through different eras and how its popularity has evolved.</p>
+        <h1>Meditation Throughout History</h1>
+        <canvas id="meditationTimeline"></canvas> <!-- Canvas for the timeline chart -->
         
-        <!-- Era Selection Dropdown -->
-        <select id="eraFilter" onchange="updateTimeline()">
-            <option value="ancient">Ancient Era</option>
-            <option value="medieval">Medieval Era</option>
-            <option value="modern">Modern Era</option>
-        </select>
-        
-        <!-- Canvas for the chart -->
-        <canvas id="meditationTimeline" width="400" height="200"></canvas>
+        <!-- Era Filter and Timeline Details -->
+        <div>
+            <label for="eraFilter">Filter by Era:</label>
+            <select id="eraFilter" onchange="filterData()">
+                <option value="all">All Eras</option>
+                <option value="Ancient">Ancient</option>
+                <option value="Medieval">Medieval</option>
+                <option value="Modern">Modern</option>
+            </select>
+        </div>
+
+        <div id="eraDetails">
+            <h2 id="eraTitle">Select an era to view details</h2>
+            <p id="eraDescription"></p>
+        </div>
     </div>
-    
+
     <footer>
         <p>&copy; 2024 Meditation Now. All Rights Reserved.</p>
     </footer>
 
-    <script src="data-visualization.js"></script> <!-- JavaScript for Data Visualization -->
+    <script src="data-visualization.js"></script>
 </body>
 </html>
