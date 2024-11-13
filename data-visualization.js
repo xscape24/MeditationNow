@@ -1,54 +1,77 @@
-// Data for the timeline
-const meditationData = [
-    { era: "Ancient", year: -500, description: "Meditation practices begin in ancient India and China, with roots in Hinduism and Taoism." },
-    { era: "Ancient", year: 400, description: "Buddhist meditation practices spread across Asia, focusing on mindfulness and concentration." },
-    { era: "Medieval", year: 1200, description: "Meditation gains prominence in Christian and Sufi traditions in the Middle East and Europe." },
-    { era: "Modern", year: 1960, description: "Meditation enters the Western mainstream, influenced by Eastern teachers and scientific interest in mindfulness." },
-    { era: "Modern", year: 2000, description: "Meditation practices become widely popularized through apps, wellness programs, and scientific studies." }
-];
+// Sample Data: Data for each era, replace this with real data
+const data = {
+    "ancient": [
+        { year: 3000, event: "First recorded meditation", popularity: 10 },
+        { year: 1000, event: "Meditation in early Buddhism", popularity: 30 },
+        { year: 500, event: "Meditation spread in India", popularity: 40 },
+    ],
+    "medieval": [
+        { year: 1000, event: "Buddhism spreads to China", popularity: 60 },
+        { year: 1200, event: "Zen Buddhism in Japan", popularity: 70 },
+        { year: 1500, event: "Spread of meditation to Europe", popularity: 50 },
+    ],
+    "modern": [
+        { year: 1900, event: "Mindfulness introduced in the West", popularity: 80 },
+        { year: 1950, event: "Meditation becomes mainstream", popularity: 90 },
+        { year: 2024, event: "Meditation apps gain popularity", popularity: 100 },
+    ]
+};
 
-// Initialize the timeline chart
-const ctx = document.getElementById('meditationTimeline').getContext('2d');
-const timelineChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: meditationData.map(point => point.year),
+// Function to update the timeline based on the selected era
+function updateTimeline() {
+    const era = document.getElementById("eraFilter").value;
+    const eraData = data[era];
+
+    // Get the canvas element
+    const ctx = document.getElementById("meditationTimeline").getContext("2d");
+
+    // Clear the canvas
+    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+
+    // Create or update the chart with the new data for the selected era
+    const chartData = {
+        labels: eraData.map(item => item.year),
         datasets: [{
-            label: 'Popularity of Meditation Over Time',
-            data: meditationData.map(point => ({ x: point.year, y: Math.random() * 100 })),
-            borderColor: '#5b4c63',
-            fill: false,
-            pointRadius: 6,
-            pointHoverRadius: 8
+            label: 'Meditation Popularity',
+            data: eraData.map(item => item.popularity),
+            backgroundColor: '#d0bcdc', // Light lavender
+            borderColor: '#5b4c63', // Dark purple
+            borderWidth: 1
         }]
-    },
-    options: {
-        scales: {
-            x: { type: 'linear', title: { display: true, text: 'Year' }},
-            y: { title: { display: true, text: 'Popularity Score' }}
-        },
-        onClick: (e, elements) => {
-            if (elements.length > 0) {
-                const index = elements[0].index;
-                showDetails(meditationData[index]);
+    };
+
+    if (window.timelineChart) {
+        // Update the existing chart
+        window.timelineChart.data = chartData;
+        window.timelineChart.update();
+    } else {
+        // Create a new chart if one does not exist yet
+        window.timelineChart = new Chart(ctx, {
+            type: 'line',
+            data: chartData,
+            options: {
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Year'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Popularity'
+                        },
+                        min: 0,
+                        max: 100
+                    }
+                },
+                responsive: true,
+                maintainAspectRatio: false
             }
-        }
+        });
     }
-});
-
-// Filter function for eras
-function filterData() {
-    const era = document.getElementById('eraFilter').value;
-    const filteredData = era === "all" ? meditationData : meditationData.filter(data => data.era === era);
-    
-    // Update chart with filtered data
-    timelineChart.data.labels = filteredData.map(point => point.year);
-    timelineChart.data.datasets[0].data = filteredData.map(point => ({ x: point.year, y: Math.random() * 100 }));
-    timelineChart.update();
 }
 
-// Show details function
-function showDetails(dataPoint) {
-    document.getElementById('eraTitle').innerText = `${dataPoint.era} Era - Year ${dataPoint.year}`;
-    document.getElementById('eraDescription').innerText = dataPoint.description;
-}
+// Call the function once to load the initial data (Ancient Era by default)
+updateTimeline();
