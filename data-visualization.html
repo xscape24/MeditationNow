@@ -8,6 +8,11 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- For visualization -->
 </head>
 <body>
+    <header>
+        <h1 class="main-title">Meditation Through History</h1>
+        <p>Explore the journey of meditation from its ancient roots to its rise in modern-day popularity.</p>
+    </header>
+
     <nav>
         <button class="button" onclick="location.href='index.html'">Home</button>
         <button class="button" onclick="location.href='about.html'">About Me</button>
@@ -15,27 +20,20 @@
         <button class="button" onclick="location.href='interactive.html'">Interactive Meditation</button>
     </nav>
 
-    <header>
-        <h1>Meditation Through History</h1>
-        <p>Explore the journey of meditation from its ancient roots to its rise in modern-day popularity.</p>
-    </header>
-
     <div class="container">
-        <!-- Timeline Chart Container -->
         <canvas id="meditationTimeline" width="800" height="400"></canvas>
         
         <!-- Filter Section -->
         <div class="filter-section">
-            <label for="eraFilter">Filter by Era:</label>
-            <select id="eraFilter" onchange="filterData()">
-                <option value="all">All Eras</option>
+            <label for="eraFilter" class="filter-label">Filter by Era:</label>
+            <select id="eraFilter" class="filter-dropdown" onchange="updateTimeline()">
                 <option value="ancient">Ancient</option>
                 <option value="medieval">Medieval</option>
                 <option value="modern">Modern</option>
             </select>
         </div>
-        
-        <!-- Description Section for Details on Demand -->
+
+        <!-- Description Section for Details -->
         <div id="detailSection" class="third-color">
             <h3 id="eraTitle">Select a point on the timeline for details</h3>
             <p id="eraDescription"></p>
