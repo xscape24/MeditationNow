@@ -1,10 +1,7 @@
 body {
     background-color: #d0bcdc;
     color: #5b4c63;
-
     font-family: 'Lato', sans-serif;
-
-
     margin: 0;
     padding: 0;
 }
@@ -43,7 +40,6 @@ nav {
     border-radius: 10px; /* Rounded corners */
 }
 
-
 footer {
     margin: 20px 0;
     padding: 10px;
@@ -57,4 +53,11 @@ footer {
     background-color: #E0C9E4; /* Soft lavender */
     padding: 10px;
     border-radius: 5px;
+}
+
+/* Canvas styling */
+canvas {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
 }
