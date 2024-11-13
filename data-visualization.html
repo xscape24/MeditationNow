@@ -1,45 +1,188 @@
-<!DOCTYPE html>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background-color: #5b4c63; /* Dark purple */
+    color: #d0bcdc; /* Light lavender */
+    text-align: center;
+    padding: 20px;
+}
+
+footer {
+    background-color: #5b4c63;
+    color: #d0bcdc;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+h1, h3, p {
+    margin: 0;
+}
+
+/* Styling for Navigation */
+nav {
+    background-color: #4a3a52;
+    color: #d0bcdc;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+button {
+    background-color: #4a3a52;
+    color: #d0bcdc;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5b4c63;
+}
+
+/* Main Title Styling */
+.main-title {
+    font-family: 'Kaushan Script', cursive;
+    color: #d0bcdc;
+    font-size: 2.5em;
+    margin-top: 20px;
+}
+
+/* Container Styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Chart container */
+#meditationTimeline {
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 30px;
+}
+
+/* Filter Section */
+.filter-section {
+    margin: 20px;
+    text-align: center;
+}
+
+.filter-label {
+    font-size: 1.2em;
+    color: #5b4c63;
+    margin-right: 10px;
+}
+
+.filter-dropdown {
+    background-color: #E0C9E4; /* Soft lavender */
+    color: #5b4c63;  /* Darker text for readability */
+    border: 1px solid #5b4c63;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.filter-dropdown:hover {
+    background-color: #d1a5c5; /* Slightly darker lavender */
+}
+
+/* Third-color Section (Detail section) */
+.third-color {
+    background-color: #E0C9E4; /* Soft lavender */
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#eraTitle {
+    font-size: 1.8em;
+    color: #4a3a52;
+    margin-bottom: 10px;
+}
+
+#eraDescription {
+    font-size: 1.1em;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .main-title {
+        font-size: 2em;
+    }
+
+    #meditationTimeline {
+        width: 100%;
+    }
+
+    .filter-dropdown {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    #eraTitle {
+        font-size: 1.5em;
+    }
+}<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Visualization - Meditation Timeline</title>
-    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap" rel="stylesheet">
+    <title>Meditation Through History</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- For visualization -->
 </head>
 <body>
     <nav>
+        <button class="button" onclick="location.href='index.html'">Home</button>
         <button class="button" onclick="location.href='about.html'">About Me</button>
         <button class="button" onclick="location.href='contact.html'">Contact Info</button>
-        <button class="button" onclick="location.href='data-visualization.html'">Data Visualization</button>
         <button class="button" onclick="location.href='interactive.html'">Interactive Meditation</button>
     </nav>
 
     <header>
-        <div class="logo">
-            <img src="671f019d2ab34a139398f8d2847ef111-free (1).png" alt="Meditation Now Logo" style="width: 300px; height: auto;" />
-        </div>
+        <h1 class="main-title">Meditation Through History</h1>
+        <p>Explore the journey of meditation from its ancient roots to its rise in modern-day popularity.</p>
     </header>
 
     <div class="container">
-        <h1>Meditation Throughout History</h1>
-        <canvas id="meditationTimeline"></canvas> <!-- Canvas for the timeline chart -->
+        <!-- Timeline Chart Container -->
+        <canvas id="meditationTimeline" width="800" height="400"></canvas>
         
-        <!-- Era Filter and Timeline Details -->
-        <div>
-            <label for="eraFilter">Filter by Era:</label>
-            <select id="eraFilter" onchange="filterData()">
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <label for="eraFilter" class="filter-label">Filter by Era:</label>
+            <select id="eraFilter" class="filter-dropdown" onchange="filterData()">
                 <option value="all">All Eras</option>
-                <option value="Ancient">Ancient</option>
-                <option value="Medieval">Medieval</option>
-                <option value="Modern">Modern</option>
+                <option value="ancient">Ancient</option>
+                <option value="medieval">Medieval</option>
+                <option value="modern">Modern</option>
             </select>
         </div>
-
-        <div id="eraDetails">
-            <h2 id="eraTitle">Select an era to view details</h2>
+        
+        <!-- Description Section for Details on Demand -->
+        <div id="detailSection" class="third-color">
+            <h3 id="eraTitle">Select a point on the timeline for details</h3>
             <p id="eraDescription"></p>
         </div>
     </div>
