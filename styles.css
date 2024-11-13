@@ -8,15 +8,15 @@ body {
 }
 
 header {
-    background-color: #5b4c63; /* Dark purple */
-    color: #d0bcdc; /* Light lavender */
+    background-color: #f0f0f0; /* Lighter header background for homepage */
+    color: #5b4c63; /* Darker text for visibility */
     text-align: center;
     padding: 20px;
 }
 
 footer {
-    background-color: #5b4c63;
-    color: #d0bcdc;
+    background-color: #f0f0f0; /* Match header color */
+    color: #5b4c63;
     text-align: center;
     padding: 10px;
     position: fixed;
@@ -28,10 +28,10 @@ h1, h3, p {
     margin: 0;
 }
 
-/* Styling for Navigation */
+/* Navigation Styles */
 nav {
-    background-color: #4a3a52;
-    color: #d0bcdc;
+    background-color: #e0c9e4; /* Soft lavender */
+    color: #5b4c63;
     text-align: center;
     padding: 10px;
     font-size: 1.1em;
@@ -39,8 +39,8 @@ nav {
 }
 
 button {
-    background-color: #4a3a52;
-    color: #d0bcdc;
+    background-color: #e0c9e4;
+    color: #5b4c63;
     border: none;
     padding: 10px 20px;
     margin: 5px;
@@ -50,32 +50,25 @@ button {
 }
 
 button:hover {
-    background-color: #5b4c63;
+    background-color: #d1a5c5;
 }
 
-/* Main Title Styling */
+/* Main Title Styles */
 .main-title {
     font-family: 'Kaushan Script', cursive;
-    color: #d0bcdc;
+    color: #5b4c63;
     font-size: 2.5em;
     margin-top: 20px;
 }
 
-/* Container Styling */
+/* Container Styles */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* Chart container */
-#meditationTimeline {
-    margin: 0 auto;
-    display: block;
-    margin-bottom: 30px;
-}
-
-/* Filter Section */
+/* Filter Section Styles */
 .filter-section {
     margin: 20px;
     text-align: center;
@@ -88,8 +81,8 @@ button:hover {
 }
 
 .filter-dropdown {
-    background-color: #E0C9E4; /* Soft lavender */
-    color: #5b4c63;  /* Darker text for readability */
+    background-color: #e0c9e4;
+    color: #5b4c63;
     border: 1px solid #5b4c63;
     padding: 8px;
     border-radius: 5px;
@@ -98,12 +91,19 @@ button:hover {
 }
 
 .filter-dropdown:hover {
-    background-color: #d1a5c5; /* Slightly darker lavender */
+    background-color: #d1a5c5;
 }
 
-/* Third-color Section (Detail section) */
+/* Timeline Section (on Data Visualization Page) */
+#meditationTimeline {
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 30px;
+}
+
+/* Description Section */
 .third-color {
-    background-color: #E0C9E4; /* Soft lavender */
+    background-color: #E0C9E4;
     padding: 20px;
     border-radius: 10px;
     margin-top: 20px;
@@ -112,7 +112,7 @@ button:hover {
 
 #eraTitle {
     font-size: 1.8em;
-    color: #4a3a52;
+    color: #5b4c63;
     margin-bottom: 10px;
 }
 
