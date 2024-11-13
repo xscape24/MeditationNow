@@ -98,4 +98,13 @@ canvas {
     border-radius: 5px;
     border: 1px solid #4a3a52;
 }
+.filter-section {
+    margin: 20px 0;
+    text-align: center;
+}
 
+#detailSection {
+    margin-top: 20px;
+    padding: 20px;
+    text-align: center;
+}
