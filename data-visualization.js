@@ -1,11 +1,11 @@
-// Meditation Data: Timeline Events
+// Meditation Data: Timeline Events (with popularity over time)
 const meditationHistory = [
-    { year: -3000, event: "Ancient Meditation Practices in India", era: "ancient" },
-    { year: -500, event: "Buddha Introduces Meditation as a Path to Enlightenment", era: "ancient" },
-    { year: 500, event: "Meditation Spreads Through China and Japan", era: "medieval" },
-    { year: 1500, event: "Renaissance Europe Begins Embracing Eastern Practices", era: "medieval" },
-    { year: 1900, event: "Modern Mindfulness Meditation Becomes Popular in the West", era: "modern" },
-    { year: 2020, event: "Meditation Practices Spread Through Apps and Online Platforms", era: "modern" }
+    { year: -3000, event: "Ancient Meditation Practices in India", popularity: 10, era: "ancient" },
+    { year: -500, event: "Buddha Introduces Meditation as a Path to Enlightenment", popularity: 15, era: "ancient" },
+    { year: 500, event: "Meditation Spreads Through China and Japan", popularity: 30, era: "medieval" },
+    { year: 1500, event: "Renaissance Europe Begins Embracing Eastern Practices", popularity: 25, era: "medieval" },
+    { year: 1900, event: "Modern Mindfulness Meditation Becomes Popular in the West", popularity: 50, era: "modern" },
+    { year: 2020, event: "Meditation Practices Spread Through Apps and Online Platforms", popularity: 90, era: "modern" }
 ];
 
 // Prepare Data for Chart.js
@@ -18,8 +18,8 @@ const getChartData = (eraFilter) => {
     return {
         labels: filteredData.map(item => item.year),
         datasets: [{
-            label: 'Meditation Events Over Time',
-            data: filteredData.map(item => 1),  // The y-values can be set to 1 (representing event occurrence)
+            label: 'Popularity of Meditation Over Time',
+            data: filteredData.map(item => item.popularity),
             fill: false,
             borderColor: '#4a3a52',
             tension: 0.1
@@ -39,7 +39,7 @@ let chart = new Chart(document.getElementById('meditationTimeline').getContext('
                     title: function (tooltipItem) {
                         const item = meditationHistory.find(event => event.year === tooltipItem[0].label);
                         document.getElementById("eraTitle").textContent = `Event: ${item.event}`;
-                        document.getElementById("eraDescription").textContent = `Year: ${item.year}`;
+                        document.getElementById("eraDescription").textContent = `Year: ${item.year}, Popularity: ${item.popularity}`;
                     }
                 }
             }
@@ -54,7 +54,10 @@ let chart = new Chart(document.getElementById('meditationTimeline').getContext('
                 }
             },
             y: {
-                display: false
+                title: {
+                    display: true,
+                    text: 'Popularity'
+                }
             }
         }
     }
