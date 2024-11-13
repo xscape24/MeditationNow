@@ -24,16 +24,14 @@
         <!-- Timeline Chart Container -->
         <canvas id="meditationTimeline" width="800" height="400"></canvas>
         
-        <!-- Filter Section -->
-        <div class="filter-section">
-            <label for="eraFilter" class="filter-label">Filter by Era:</label>
-            <select id="eraFilter" class="filter-dropdown" onchange="filterData()">
-                <option value="all">All Eras</option>
-                <option value="ancient">Ancient</option>
-                <option value="medieval">Medieval</option>
-                <option value="modern">Modern</option>
-            </select>
-        </div>
+      <div class="filter-section">
+    <label for="eraFilter" class="filter-label">Filter by Era:</label>
+    <select id="eraFilter" class="filter-dropdown" onchange="updateTimeline()"> <!-- Changed this to trigger updateTimeline -->
+        <option value="ancient">Ancient</option>
+        <option value="medieval">Medieval</option>
+        <option value="modern">Modern</option>
+    </select>
+</div>
         
         <!-- Description Section for Details on Demand -->
         <div id="detailSection" class="third-color">
