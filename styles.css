@@ -10,19 +10,18 @@ body {
     font-family: 'Lato', sans-serif;
     line-height: 1.6;
     background-color: #d0bcdc; /* Light lavender background */
-    color: #5b4c63; /* Darker text color */
-    text-align: center; /* Center all text */
+    color: #5b4c63; /* Dark purple text for readability */
 }
 
 /* Navigation Bar */
 nav {
-    background-color: #5b4c63; /* Dark purple */
+    background-color: #5b4c63; /* Dark purple background */
     padding: 10px;
     text-align: center;
 }
 
 nav a {
-    color: white;
+    color: #d0bcdc; /* Light lavender text */
     text-decoration: none;
     margin: 0 10px;
 }
@@ -30,33 +29,32 @@ nav a {
 nav button {
     background-color: #4a3a52; /* Darker purple for buttons */
     border: none;
-    color: #d0bcdc; /* Light lavender */
+    color: #d0bcdc; /* Light lavender text */
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
 }
 
 nav button:hover {
-    background-color: #6a4c9c; /* Purple hover effect */
+    background-color: #4a3a52; /* Same dark purple on hover */
 }
 
 /* Header Styling */
 header {
     background-color: #5b4c63; /* Dark purple */
-    color: #E0C9E4; /* Light lavender for header text */
+    color: #d0bcdc; /* Light lavender text */
     padding: 20px;
     text-align: center;
 }
 
 header h1 {
-    font-size: 2.5em;
-    font-family: 'Lato', sans-serif; /* Ensures consistent title font */
+    font-size: 3em;
+    font-family: 'Lato', sans-serif;
 }
 
 header p {
     font-size: 1.2em;
     margin-top: 10px;
-    color: #E0C9E4; /* Light lavender for subtitle */
 }
 
 /* Main Content */
@@ -64,6 +62,23 @@ header p {
     max-width: 1200px;
     margin: 20px auto;
     padding: 0 20px;
+    text-align: center;
+}
+
+/* Citations Page */
+.citations-section {
+    margin-bottom: 30px; /* Space between sections */
+}
+
+ul.prompts {
+    list-style-type: disc; /* Set the bullet point style */
+    margin-left: 20px;
+    font-size: 1.1em;
+    color: #5b4c63; /* Purple color for the text */
+}
+
+ul.prompts li {
+    margin-bottom: 10px; /* Space between each bullet point */
 }
 
 /* About Me Section */
@@ -72,32 +87,28 @@ header p {
 }
 
 h2 {
-    font-size: 2em;
+    font-size: 2.5em;
     margin-bottom: 10px;
-    color: #5b4c63; /* Dark purple color for sub-headings */
+    color: #6a4c9c; /* Purple color */
 }
 
 p {
     font-size: 1.2em;
     margin-bottom: 15px;
-    color: #5b4c63;
+    color: #555555;
 }
 
-/* Ensure images are centered */
 img {
     width: 100%;
     height: auto;
     border-radius: 10px;
     margin-top: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 /* Footer Styling */
 footer {
     background-color: #5b4c63; /* Dark purple */
-    color: white;
+    color: #d0bcdc; /* Light lavender text */
     padding: 10px;
     text-align: center;
     margin-top: 20px;
@@ -105,7 +116,7 @@ footer {
 
 /* Links styling */
 a {
-    color: #5b4c63; /* Purple links */
+    color: #6a4c9c;
     text-decoration: none;
 }
 
@@ -113,47 +124,18 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Custom styling for buttons */
-.button {
-    margin: 0 10px;
-    padding: 10px 20px;
-    font-size: 1em;
-    background-color: #4a3a52; /* Darker purple */
-    color: #d0bcdc; /* Light lavender */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    font-family: 'Lato', sans-serif;
+/* Customizing sections for readability */
+h2, h3 {
+    color: #6a4c9c; /* Purple for subheadings */
 }
 
-.button:hover {
-    background-color: #6a4c9c; /* Lighter purple on hover */
-}
-
-/* Custom styling for the timeline */
-#meditationTimeline {
-    margin-top: 30px;
-    width: 100%; /* Ensure canvas is responsive */
-    height: auto;
-    max-width: 100%; /* Avoid overflow */
-}
-
-/* Details Section */
-#eraDetails {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #E0C9E4; /* Soft lavender */
-    border-radius: 5px;
-}
-
-/* Make elements more responsive on smaller screens */
+/* For responsive design */
 @media (max-width: 768px) {
     .container {
         padding: 15px;
     }
 
-    .button {
+    nav button {
         padding: 8px 15px;
         font-size: 0.9em;
     }
@@ -173,8 +155,22 @@ a:hover {
         margin: 5px 0;
         width: 100%;
     }
-    
-    #meditationTimeline {
-        max-height: 300px; /* Limit height on small screens */
-    }
+}
+
+/* For citations and prompt sections */
+.citations-section {
+    margin-top: 30px;
+}
+
+/* Citations Page section titles */
+h2 {
+    font-size: 2.5em;
+    color: #6a4c9c;
+    margin-bottom: 15px;
+}
+
+ul.prompts {
+    font-size: 1.1em;
+    color: #5b4c63;
+    margin-left: 20px;
 }
