@@ -10,18 +10,19 @@ body {
     font-family: 'Lato', sans-serif;
     line-height: 1.6;
     background-color: #d0bcdc; /* Light lavender background */
-    color: #5b4c63; /* Dark purple text for readability */
+    color: #5b4c63; /* Darker text color */
+    text-align: center; /* Center all text */
 }
 
 /* Navigation Bar */
 nav {
-    background-color: #5b4c63; /* Dark purple background */
+    background-color: #5b4c63; /* Dark purple */
     padding: 10px;
     text-align: center;
 }
 
 nav a {
-    color: #d0bcdc; /* Light lavender text */
+    color: white;
     text-decoration: none;
     margin: 0 10px;
 }
@@ -29,32 +30,33 @@ nav a {
 nav button {
     background-color: #4a3a52; /* Darker purple for buttons */
     border: none;
-    color: #d0bcdc; /* Light lavender text */
+    color: #d0bcdc; /* Light lavender */
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
 }
 
 nav button:hover {
-    background-color: #4a3a52; /* Same dark purple on hover */
+    background-color: #6a4c9c; /* Purple hover effect */
 }
 
 /* Header Styling */
 header {
     background-color: #5b4c63; /* Dark purple */
-    color: #d0bcdc; /* Light lavender text */
+    color: #E0C9E4; /* Light lavender for header text */
     padding: 20px;
     text-align: center;
 }
 
 header h1 {
-    font-size: 3em;
-    font-family: 'Lato', sans-serif;
+    font-size: 2.5em;
+    font-family: 'Lato', sans-serif; /* Ensures consistent title font */
 }
 
 header p {
     font-size: 1.2em;
     margin-top: 10px;
+    color: #E0C9E4; /* Light lavender for subtitle */
 }
 
 /* Main Content */
@@ -62,23 +64,6 @@ header p {
     max-width: 1200px;
     margin: 20px auto;
     padding: 0 20px;
-    text-align: center;
-}
-
-/* Citations Page */
-.citations-section {
-    margin-bottom: 30px; /* Space between sections */
-}
-
-ul.prompts {
-    list-style-type: disc; /* Set the bullet point style */
-    margin-left: 20px;
-    font-size: 1.1em;
-    color: #5b4c63; /* Purple color for the text */
-}
-
-ul.prompts li {
-    margin-bottom: 10px; /* Space between each bullet point */
 }
 
 /* About Me Section */
@@ -87,28 +72,32 @@ ul.prompts li {
 }
 
 h2 {
-    font-size: 2.5em;
+    font-size: 2em;
     margin-bottom: 10px;
-    color: #6a4c9c; /* Purple color */
+    color: #5b4c63; /* Dark purple color for sub-headings */
 }
 
 p {
     font-size: 1.2em;
     margin-bottom: 15px;
-    color: #555555;
+    color: #5b4c63;
 }
 
+/* Ensure images are centered */
 img {
     width: 100%;
     height: auto;
     border-radius: 10px;
     margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Footer Styling */
 footer {
     background-color: #5b4c63; /* Dark purple */
-    color: #d0bcdc; /* Light lavender text */
+    color: white;
     padding: 10px;
     text-align: center;
     margin-top: 20px;
@@ -116,7 +105,7 @@ footer {
 
 /* Links styling */
 a {
-    color: #6a4c9c;
+    color: #5b4c63; /* Purple links */
     text-decoration: none;
 }
 
@@ -124,18 +113,47 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Customizing sections for readability */
-h2, h3 {
-    color: #6a4c9c; /* Purple for subheadings */
+/* Custom styling for buttons */
+.button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #4a3a52; /* Darker purple */
+    color: #d0bcdc; /* Light lavender */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Lato', sans-serif;
 }
 
-/* For responsive design */
+.button:hover {
+    background-color: #6a4c9c; /* Lighter purple on hover */
+}
+
+/* Custom styling for the timeline */
+#meditationTimeline {
+    margin-top: 30px;
+    width: 100%; /* Ensure canvas is responsive */
+    height: auto;
+    max-width: 100%; /* Avoid overflow */
+}
+
+/* Details Section */
+#eraDetails {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #E0C9E4; /* Soft lavender */
+    border-radius: 5px;
+}
+
+/* Make elements more responsive on smaller screens */
 @media (max-width: 768px) {
     .container {
         padding: 15px;
     }
 
-    nav button {
+    .button {
         padding: 8px 15px;
         font-size: 0.9em;
     }
@@ -154,5 +172,9 @@ h2, h3 {
     .button {
         margin: 5px 0;
         width: 100%;
+    }
+    
+    #meditationTimeline {
+        max-height: 300px; /* Limit height on small screens */
     }
 }
