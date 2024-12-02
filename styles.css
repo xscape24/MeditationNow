@@ -7,15 +7,15 @@
 
 /* Global styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Lato', sans-serif;
     line-height: 1.6;
-    background-color: #f7f7f7; /* Light background */
-    color: #333333; /* Dark text for readability */
+    background-color: #d0bcdc; /* Light lavender background */
+    color: #5b4c63; /* Darker text color */
 }
 
 /* Navigation Bar */
 nav {
-    background-color: #6a4c9c; /* Purple background */
+    background-color: #5b4c63; /* Dark purple */
     padding: 10px;
     text-align: center;
 }
@@ -27,21 +27,21 @@ nav a {
 }
 
 nav button {
-    background-color: #6a4c9c;
+    background-color: #4a3a52; /* Darker purple for buttons */
     border: none;
-    color: white;
+    color: #d0bcdc; /* Light lavender */
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
 }
 
 nav button:hover {
-    background-color: #5a3f85; /* Darker purple on hover */
+    background-color: #6a4c9c; /* Purple hover effect */
 }
 
 /* Header Styling */
 header {
-    background-color: #5a3f85; /* Dark purple */
+    background-color: #5b4c63; /* Dark purple */
     color: white;
     padding: 20px;
     text-align: center;
@@ -71,13 +71,13 @@ header p {
 h2 {
     font-size: 2em;
     margin-bottom: 10px;
-    color: #6a4c9c; /* Purple color */
+    color: #5b4c63; /* Dark purple color */
 }
 
 p {
     font-size: 1.2em;
     margin-bottom: 15px;
-    color: #555555;
+    color: #5b4c63;
 }
 
 img {
@@ -89,7 +89,7 @@ img {
 
 /* Footer Styling */
 footer {
-    background-color: #5a3f85; /* Dark purple */
+    background-color: #5b4c63; /* Dark purple */
     color: white;
     padding: 10px;
     text-align: center;
@@ -98,11 +98,78 @@ footer {
 
 /* Links styling */
 a {
-    color: #6a4c9c;
+    color: #5b4c63; /* Purple links */
     text-decoration: none;
 }
 
 a:hover {
     text-decoration: underline;
 }
+
+/* Custom styling for buttons */
+.button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #4a3a52; /* Darker purple */
+    color: #d0bcdc; /* Light lavender */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Lato', sans-serif;
+}
+
+.button:hover {
+    background-color: #6a4c9c; /* Lighter purple on hover */
+}
+
+/* Custom styling for the timeline */
+#meditationTimeline {
+    margin-top: 30px;
+    width: 100%; /* Ensure canvas is responsive */
+    height: auto;
+    max-width: 100%; /* Avoid overflow */
+}
+
+/* Details Section */
+#eraDetails {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #E0C9E4; /* Soft lavender */
+    border-radius: 5px;
+}
+
+/* Make elements more responsive on smaller screens */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    header img {
+        width: 80%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column; /* Stack buttons vertically */
+    }
+
+    .button {
+        margin: 5px 0;
+        width: 100%;
+    }
+    
+    #meditationTimeline {
+        max-height: 300px; /* Limit height on small screens */
+    }
+}
+
 
