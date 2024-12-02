@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditation Recommendation Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html"><button>Home</button></a>
+        <a href="meditation-types.html"><button>Meditation Types</button></a>
+        <a href="benefits.html"><button>Meditation Benefits</button></a>
+        <a href="citations.html"><button>Citations</button></a>
+    </nav>
+
+    <!-- Quiz Section -->
+    <header>
+        <h1>Meditation Recommendation Quiz</h1>
+        <p>Answer the following questions to receive a personalized meditation recommendation.</p>
+    </header>
+
+    <div class="container">
+        <form id="meditationQuiz">
+            <section>
+                <h2>How do you feel right now?</h2>
+                <label><input type="radio" name="mood" value="anxious"> Anxious</label><br>
+                <label><input type="radio" name="mood" value="calm"> Calm</label><br>
+                <label><input type="radio" name="mood" value="stressed"> Stressed</label><br>
+            </section>
+
+            <section>
+                <h2>Do you prefer guided sessions or self-directed practices?</h2>
+                <label><input type="radio" name="guidance" value="guided"> Guided</label><br>
+                <label><input type="radio" name="guidance" value="self-directed"> Self-directed</label><br>
+            </section>
+
+            <section>
+                <h2>How long can you dedicate to meditation?</h2>
+                <label><input type="radio" name="duration" value="short"> 5-10 minutes</label><br>
+                <label><input type="radio" name="duration" value="long"> 15-30 minutes</label><br>
+            </section>
+
+            <button type="submit">Get Recommendation</button>
+        </form>
+
+        <div id="recommendation" class="hidden">
+            <h2>Your Meditation Recommendation:</h2>
+            <p id="meditationType"></p>
+            <p id="reasoning"></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Meditation Now. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
