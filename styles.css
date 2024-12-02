@@ -43,18 +43,20 @@ nav button:hover {
 /* Header Styling */
 header {
     background-color: #5b4c63; /* Dark purple */
-    color: white;
+    color: #E0C9E4; /* Light lavender for header text */
     padding: 20px;
     text-align: center;
 }
 
 header h1 {
     font-size: 2.5em;
+    font-family: 'Lato', sans-serif; /* Ensures consistent title font */
 }
 
 header p {
     font-size: 1.2em;
     margin-top: 10px;
+    color: #E0C9E4; /* Light lavender for subtitle */
 }
 
 /* Main Content */
@@ -72,7 +74,7 @@ header p {
 h2 {
     font-size: 2em;
     margin-bottom: 10px;
-    color: #5b4c63; /* Dark purple color */
+    color: #5b4c63; /* Dark purple color for sub-headings */
 }
 
 p {
