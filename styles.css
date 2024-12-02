@@ -1,117 +1,144 @@
-/* General Styles */
-body {
-    background-color: #d0bcdc;
-    color: #5b4c63;
-    font-family: 'Lato', sans-serif;
+/* Basic Reset */
+* {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Ensures padding and margin don't affect layout */
+    box-sizing: border-box;
 }
 
-header {
-    text-align: center;
-    padding: 20px;
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
 }
 
-.logo {
-    margin: 20px 0;
-    max-width: 100%;
-    height: auto;
-}
-
+/* Navigation Bar */
 nav {
-    display: flex;
-    justify-content: center;
-    background-color: #5b4c63; /* Dark purple */
-    padding: 15px 0;
-    flex-wrap: wrap; /* Ensures nav buttons stack on smaller screens */
-}
-
-.button {
-    margin: 0 10px;
-    padding: 10px 20px;
-    font-size: 1em;
-    background-color: #4a3a52; /* Darker accent color */
-    color: #d0bcdc; /* Light lavender */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    font-family: 'Lato', sans-serif;
-}
-
-.button:hover {
-    background-color: #4a3a52;
-}
-
-.container {
+    background-color: #333;
     padding: 20px;
     text-align: center;
-    background-color: #d0bcdc; /* Light lavender */
-    border-radius: 10px;
-    max-width: 1200px;
+}
+
+nav button {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+nav button:hover {
+    background-color: #4cae4c;
+}
+
+/* Header */
+header {
+    background-color: #00796b;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+header h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+header p {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+/* Container and Content Section */
+.container {
+    width: 80%;
     margin: 0 auto;
 }
 
-footer {
-    margin: 20px 0;
-    padding: 10px;
-    font-size: 0.9em;
-    text-align: center;
-    font-family: 'Lato', sans-serif;
+h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #00796b;
 }
 
-/* Third color */
-.third-color {
-    background-color: #E0C9E4; /* Soft lavender */
-    padding: 10px;
+section {
+    margin-bottom: 50px;
+}
+
+section p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 15px 25px;
+    font-size: 18px;
+    border: none;
     border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
 }
 
-/* Custom styling for the timeline */
-#meditationTimeline {
-    margin-top: 30px;
-    width: 100%; /* Ensure canvas is responsive */
+.button:hover {
+    background-color: #4cae4c;
+}
+
+/* Content Sections Styling */
+.overview, .content-section, .interactive-section {
+    background-color: #ffffff;
+    padding: 40px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+section img {
+    max-width: 100%;
     height: auto;
-    max-width: 100%; /* Avoid overflow */
+    display: block;
+    margin: 20px 0;
 }
 
-/* Details Section */
-#eraDetails {
-    margin-top: 20px;
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
     padding: 20px;
-    background-color: #E0C9E4;
-    border-radius: 5px;
+    margin-top: 50px;
 }
 
-/* Make elements more responsive on smaller screens */
+/* Make the whole layout responsive */
 @media (max-width: 768px) {
     .container {
-        padding: 15px;
+        width: 90%;
+    }
+
+    header h1 {
+        font-size: 36px;
+    }
+
+    header p {
+        font-size: 18px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    section p {
+        font-size: 18px;
     }
 
     .button {
-        padding: 8px 15px;
-        font-size: 0.9em;
-    }
-
-    header img {
-        width: 80%;
-        max-width: 300px;
-    }
-}
-
-@media (max-width: 480px) {
-    nav {
-        flex-direction: column; /* Stack buttons vertically */
-    }
-
-    .button {
-        margin: 5px 0;
-        width: 100%;
-    }
-    
-    #meditationTimeline {
-        max-height: 300px; /* Limit height on small screens */
+        font-size: 16px;
+        padding: 12px 20px;
     }
 }
