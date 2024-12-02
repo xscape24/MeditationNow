@@ -7,17 +7,39 @@
 
 /* Global styling */
 body {
-    font-family: 'Lato', sans-serif;
-    line-height: 1.6;
     background-color: #d0bcdc; /* Light lavender background */
-    color: #5b4c63; /* Dark purple text for readability */
+    color: #5b4c63; /* Dark purple text */
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and margin don't affect layout */
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #5b4c63; /* Dark purple */
+}
+
+header h1 {
+    font-size: 3em;
+    color: #d0bcdc; /* Light lavender text */
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #d0bcdc;
 }
 
 /* Navigation Bar */
 nav {
+    display: flex;
+    justify-content: center;
     background-color: #5b4c63; /* Dark purple background */
-    padding: 10px;
-    text-align: center;
+    padding: 15px 0;
+    flex-wrap: wrap; /* Ensures nav buttons stack on smaller screens */
 }
 
 nav a {
@@ -36,25 +58,7 @@ nav button {
 }
 
 nav button:hover {
-    background-color: #4a3a52; /* Same dark purple on hover */
-}
-
-/* Header Styling */
-header {
-    background-color: #5b4c63; /* Dark purple */
-    color: #d0bcdc; /* Light lavender text */
-    padding: 20px;
-    text-align: center;
-}
-
-header h1 {
-    font-size: 3em;
-    font-family: 'Lato', sans-serif;
-}
-
-header p {
-    font-size: 1.2em;
-    margin-top: 10px;
+    background-color: #4a3a52; /* Dark purple on hover */
 }
 
 /* Main Content */
@@ -71,38 +75,14 @@ header p {
 }
 
 ul.prompts {
-    list-style-type: disc; /* Set the bullet point style */
+    list-style-type: disc; /* Bullet points for prompts */
     margin-left: 20px;
     font-size: 1.1em;
-    color: #5b4c63; /* Purple color for the text */
+    color: #5b4c63; /* Dark purple for the text */
 }
 
 ul.prompts li {
     margin-bottom: 10px; /* Space between each bullet point */
-}
-
-/* About Me Section */
-.overview, .content-section {
-    margin-bottom: 20px;
-}
-
-h2 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    color: #6a4c9c; /* Purple color */
-}
-
-p {
-    font-size: 1.2em;
-    margin-bottom: 15px;
-    color: #555555;
-}
-
-img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-top: 20px;
 }
 
 /* Footer Styling */
@@ -116,7 +96,7 @@ footer {
 
 /* Links styling */
 a {
-    color: #6a4c9c;
+    color: #6a4c9c; /* Lavender color for links */
     text-decoration: none;
 }
 
@@ -126,7 +106,7 @@ a:hover {
 
 /* Customizing sections for readability */
 h2, h3 {
-    color: #6a4c9c; /* Purple for subheadings */
+    color: #6a4c9c; /* Purple color for subheadings */
 }
 
 /* For responsive design */
