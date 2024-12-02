@@ -156,21 +156,3 @@ h2, h3 {
         width: 100%;
     }
 }
-
-/* For citations and prompt sections */
-.citations-section {
-    margin-top: 30px;
-}
-
-/* Citations Page section titles */
-h2 {
-    font-size: 2.5em;
-    color: #6a4c9c;
-    margin-bottom: 15px;
-}
-
-ul.prompts {
-    font-size: 1.1em;
-    color: #5b4c63;
-    margin-left: 20px;
-}
