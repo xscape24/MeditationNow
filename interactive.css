@@ -1,0 +1,96 @@
+/* Basic reset and layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+nav {
+    background-color: #6a4c9c; 
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+nav button {
+    background-color: #6a4c9c;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+nav button:hover {
+    background-color: #5a3f85;
+}
+
+header {
+    background-color: #5a3f85;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #6a4c9c;
+}
+
+label {
+    font-size: 1.2em;
+}
+
+button {
+    background-color: #6a4c9c;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.5em;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5a3f85;
+}
+
+/* Hide recommendation initially */
+.hidden {
+    display: none;
+}
+
+footer {
+    background-color: #5a3f85;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
