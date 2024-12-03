@@ -10,7 +10,6 @@ body {
 header {
     text-align: center;
     padding: 20px;
-    border-bottom: 2px solid #E0C9E4; /* Lavender border under header */
 }
 
 .logo {
@@ -25,7 +24,6 @@ nav {
     background-color: #5b4c63; /* Dark purple */
     padding: 15px 0;
     flex-wrap: wrap; /* Ensures nav buttons stack on smaller screens */
-    border-bottom: 2px solid #E0C9E4; /* Lavender border under the navigation */
 }
 
 nav a {
@@ -35,11 +33,11 @@ nav a {
 .nav-button {
     background-color: #4a3a52; /* Darker accent color */
     color: #d0bcdc; /* Light lavender */
-    border: 2px solid #E0C9E4; /* Lavender border around the button */
+    border: none;
     padding: 10px 20px;
     font-size: 1em;
     cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s; /* Smooth transition for hover */
+    transition: background-color 0.3s;
     font-family: 'Lato', sans-serif;
     margin: 0 10px;
     border-radius: 5px;
@@ -47,7 +45,6 @@ nav a {
 
 .nav-button:hover {
     background-color: #6a4c9c; /* Light purple color on hover */
-    border-color: #6a4c9c; /* Change border color on hover */
 }
 
 .container {
@@ -57,7 +54,6 @@ nav a {
     border-radius: 10px;
     max-width: 1200px;
     margin: 0 auto;
-    border: 2px solid #E0C9E4; /* Lavender border around container */
 }
 
 footer {
@@ -66,7 +62,6 @@ footer {
     font-size: 0.9em;
     text-align: center;
     font-family: 'Lato', sans-serif;
-    border-top: 2px solid #E0C9E4; /* Lavender border above footer */
 }
 
 /* Third color */
@@ -90,7 +85,6 @@ footer {
     padding: 20px;
     background-color: #E0C9E4;
     border-radius: 5px;
-    border: 2px solid #E0C9E4; /* Lavender border around era details */
 }
 
 /* Make elements more responsive on smaller screens */
@@ -124,4 +118,3 @@ footer {
         max-height: 300px; /* Limit height on small screens */
     }
 }
-
