@@ -118,9 +118,3 @@ footer {
         max-height: 300px; /* Limit height on small screens */
     }
 }
-.about-image {
-    display: block;
-    margin: 0 auto;
-    max-width: 400px; /* Increase max width */
-    height: auto; /* Adjust height proportionally */
-}
