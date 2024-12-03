@@ -1,29 +1,33 @@
 body {
-    background-color: #d0bcdc;
-    color: #5b4c63;
+    background-color: #d0bcdc; /* Light lavender background */
+    color: #5b4c63; /* Dark purple text */
     font-family: 'Lato', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Ensures padding and margin don't affect layout */
+    box-sizing: border-box;
 }
 
 header {
     text-align: center;
     padding: 20px;
+    background-color: #4a3a52; /* Dark purple background for header */
+    color: #fff; /* White text for better contrast */
 }
 
-.logo {
-    margin: 20px 0;
-    max-width: 100%;
-    height: auto;
+header h1 {
+    margin: 0;
+}
+
+header p {
+    font-size: 1.2em;
 }
 
 nav {
     display: flex;
     justify-content: center;
-    background-color: #5b4c63; /* Dark purple */
+    background-color: #5b4c63; /* Dark purple for nav */
     padding: 15px 0;
-    flex-wrap: wrap; /* Ensures nav buttons stack on smaller screens */
+    flex-wrap: wrap; /* Stacks nav buttons on small screens */
 }
 
 .button {
@@ -31,7 +35,7 @@ nav {
     padding: 10px 20px;
     font-size: 1em;
     background-color: #4a3a52; /* Darker accent color */
-    color: #d0bcdc; /* Light lavender */
+    color: #d0bcdc; /* Light lavender text */
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -40,16 +44,17 @@ nav {
 }
 
 .button:hover {
-    background-color: #4a3a52; /* Retain hover behavior */
+    background-color: #6d4f5f; /* Lighter purple on hover */
 }
 
 .container {
     padding: 20px;
     text-align: center;
-    background-color: #d0bcdc; /* Light lavender */
+    background-color: #ffffff; /* White background for content */
     border-radius: 10px;
     max-width: 1200px;
     margin: 0 auto;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for separation */
 }
 
 footer {
@@ -58,11 +63,13 @@ footer {
     font-size: 0.9em;
     text-align: center;
     font-family: 'Lato', sans-serif;
+    background-color: #4a3a52; /* Dark purple footer */
+    color: #fff; /* White text for contrast */
 }
 
 /* Third color */
 .third-color {
-    background-color: #E0C9E4; /* Soft lavender */
+    background-color: #E0C9E4; /* Soft lavender for highlighting sections */
     padding: 10px;
     border-radius: 5px;
 }
@@ -70,9 +77,9 @@ footer {
 /* Custom styling for the timeline */
 #meditationTimeline {
     margin-top: 30px;
-    width: 100%; /* Ensure canvas is responsive */
+    width: 100%;
     height: auto;
-    max-width: 100%; /* Avoid overflow */
+    max-width: 100%;
 }
 
 /* Details Section */
