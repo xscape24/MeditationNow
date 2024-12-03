@@ -1,11 +1,10 @@
-/* General Styles */
 body {
     background-color: #d0bcdc;
     color: #5b4c63;
     font-family: 'Lato', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Ensures padding and margin don't affect layout */
 }
 
 header {
@@ -13,33 +12,41 @@ header {
     padding: 20px;
 }
 
+.logo {
+    margin: 20px 0;
+    max-width: 100%;
+    height: auto;
+}
+
 nav {
     display: flex;
     justify-content: center;
-    background-color: #5b4c63;
+    background-color: #5b4c63; /* Dark purple */
     padding: 15px 0;
+    flex-wrap: wrap; /* Ensures nav buttons stack on smaller screens */
 }
 
-button {
+.button {
     margin: 0 10px;
     padding: 10px 20px;
     font-size: 1em;
-    background-color: #4a3a52;
-    color: #d0bcdc;
+    background-color: #4a3a52; /* Darker accent color */
+    color: #d0bcdc; /* Light lavender */
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    font-family: 'Lato', sans-serif;
 }
 
-button:hover {
+.button:hover {
     background-color: #4a3a52;
 }
 
 .container {
     padding: 20px;
     text-align: center;
-    background-color: #d0bcdc;
+    background-color: #d0bcdc; /* Light lavender */
     border-radius: 10px;
     max-width: 1200px;
     margin: 0 auto;
@@ -50,80 +57,60 @@ footer {
     padding: 10px;
     font-size: 0.9em;
     text-align: center;
+    font-family: 'Lato', sans-serif;
 }
 
-/* About Me Section */
-.overview {
-    margin-bottom: 20px;
+/* Third color */
+.third-color {
+    background-color: #E0C9E4; /* Soft lavender */
+    padding: 10px;
+    border-radius: 5px;
 }
 
-.about-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.about-image {
-    width: 50%; /* Adjust the image size */
-    height: auto;
-    border-radius: 10px;
-}
-
-.caption {
-    width: 45%; /* Adjust the width for the caption */
-    font-size: 1.2em;
-    color: #5b4c63;
-    margin-left: 20px;
-}
-
-.caption p {
-    line-height: 1.6;
-}
-
-/* Content Section */
-.content-section {
-    margin-top: 20px;
-}
-
-/* Footer */
-footer {
+/* Custom styling for the timeline */
+#meditationTimeline {
     margin-top: 30px;
+    width: 100%; /* Ensure canvas is responsive */
+    height: auto;
+    max-width: 100%; /* Avoid overflow */
 }
 
-/* Media Queries for Responsiveness */
+/* Details Section */
+#eraDetails {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #E0C9E4;
+    border-radius: 5px;
+}
+
+/* Make elements more responsive on smaller screens */
 @media (max-width: 768px) {
-    .about-content {
-        flex-direction: column;
-        align-items: center;
+    .container {
+        padding: 15px;
     }
 
-    .about-image {
-        width: 80%;
-        margin-bottom: 20px;
+    .button {
+        padding: 8px 15px;
+        font-size: 0.9em;
     }
 
-    .caption {
+    header img {
         width: 80%;
-        text-align: center;
+        max-width: 300px;
     }
 }
 
 @media (max-width: 480px) {
     nav {
-        flex-direction: column;
+        flex-direction: column; /* Stack buttons vertically */
     }
 
-    button {
+    .button {
         margin: 5px 0;
         width: 100%;
     }
-
-    .about-image {
-        width: 100%;
-    }
-
-    .caption {
-        width: 100%;
+    
+    #meditationTimeline {
+        max-height: 300px; /* Limit height on small screens */
     }
 }
