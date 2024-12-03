@@ -1,12 +1,18 @@
 document.getElementById("meditationQuiz").addEventListener("submit", function(event) {
-    event.preventDefault();
+    event.preventDefault(); // Prevents the form from reloading the page
 
-    let mood = document.querySelector('input[name="mood"]:checked').value;
-    let guidance = document.querySelector('input[name="guidance"]:checked').value;
-    let duration = document.querySelector('input[name="duration"]:checked').value;
+    let mood = document.querySelector('input[name="mood"]:checked') ? document.querySelector('input[name="mood"]:checked').value : '';
+    let guidance = document.querySelector('input[name="guidance"]:checked') ? document.querySelector('input[name="guidance"]:checked').value : '';
+    let duration = document.querySelector('input[name="duration"]:checked') ? document.querySelector('input[name="duration"]:checked').value : '';
 
     let meditationType = '';
     let reasoning = '';
+
+    // Check if all fields are selected
+    if (!mood || !guidance || !duration) {
+        alert("Please answer all the questions.");
+        return;
+    }
 
     // Meditation recommendation logic
     if (mood === "anxious" && guidance === "guided" && duration === "short") {
@@ -23,5 +29,5 @@ document.getElementById("meditationQuiz").addEventListener("submit", function(ev
     // Show recommendation
     document.getElementById("meditationType").textContent = meditationType;
     document.getElementById("reasoning").textContent = reasoning;
-    document.getElementById("recommendation").classList.remove("hidden");
+    document.getElementById("recommendation").classList.remove("hidden"); // Show the recommendation section
 });
