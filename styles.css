@@ -1,19 +1,15 @@
-/* General body styles */
 body {
-    background-color: #d0bcdc;  /* Light lavender */
-    color: #5b4c63;  /* Dark purple text */
+    background-color: #d0bcdc;
+    color: #5b4c63;
     font-family: 'Lato', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Ensures padding and margin don't affect layout */
 }
 
-/* Header styling */
 header {
     text-align: center;
     padding: 20px;
-    background-color: #E0C9E4;  /* Slightly lighter lavender */
-    color: #4a3a52;  /* Darker accent color for contrast */
 }
 
 .logo {
@@ -22,21 +18,20 @@ header {
     height: auto;
 }
 
-/* Navigation bar */
 nav {
     display: flex;
     justify-content: center;
-    background-color: #5b4c63;  /* Dark purple */
+    background-color: #5b4c63; /* Dark purple */
     padding: 15px 0;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Ensures nav buttons stack on smaller screens */
 }
 
 .button {
     margin: 0 10px;
     padding: 10px 20px;
     font-size: 1em;
-    background-color: #4a3a52;  /* Darker accent color */
-    color: #d0bcdc;  /* Light lavender text */
+    background-color: #4a3a52; /* Darker accent color */
+    color: #d0bcdc; /* Light lavender */
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -45,54 +40,50 @@ nav {
 }
 
 .button:hover {
-    background-color: #3c2f40;  /* Slightly darker shade on hover */
+    background-color: #4a3a52; /* Retain hover behavior */
 }
 
-/* Container for sections */
 .container {
     padding: 20px;
     text-align: center;
-    background-color: #d0bcdc;  /* Light lavender */
+    background-color: #d0bcdc; /* Light lavender */
     border-radius: 10px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Footer styling */
 footer {
     margin: 20px 0;
     padding: 10px;
     font-size: 0.9em;
     text-align: center;
     font-family: 'Lato', sans-serif;
-    background-color: #5b4c63;  /* Dark purple footer */
-    color: #d0bcdc;  /* Light lavender text */
 }
 
-/* Third color for additional sections */
+/* Third color */
 .third-color {
-    background-color: #E0C9E4;  /* Soft lavender */
+    background-color: #E0C9E4; /* Soft lavender */
     padding: 10px;
     border-radius: 5px;
 }
 
-/* Timeline section */
+/* Custom styling for the timeline */
 #meditationTimeline {
     margin-top: 30px;
-    width: 100%;
+    width: 100%; /* Ensure canvas is responsive */
     height: auto;
-    max-width: 100%;
+    max-width: 100%; /* Avoid overflow */
 }
 
-/* Details section */
+/* Details Section */
 #eraDetails {
     margin-top: 20px;
     padding: 20px;
-    background-color: #E0C9E4;  /* Soft lavender */
+    background-color: #E0C9E4;
     border-radius: 5px;
 }
 
-/* Responsive design */
+/* Make elements more responsive on smaller screens */
 @media (max-width: 768px) {
     .container {
         padding: 15px;
@@ -118,7 +109,7 @@ footer {
         margin: 5px 0;
         width: 100%;
     }
-
+    
     #meditationTimeline {
         max-height: 300px; /* Limit height on small screens */
     }
