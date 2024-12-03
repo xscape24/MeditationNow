@@ -114,3 +114,8 @@ footer {
         max-height: 300px; /* Limit height on small screens */
     }
 }
+.content-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
