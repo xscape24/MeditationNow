@@ -26,20 +26,20 @@
         <form id="meditationQuiz">
             <section>
                 <h2>How do you feel right now?</h2>
-                <label><input type="radio" name="mood" value="anxious"> Anxious</label><br>
+                <label><input type="radio" name="mood" value="anxious" required> Anxious</label><br>
                 <label><input type="radio" name="mood" value="calm"> Calm</label><br>
                 <label><input type="radio" name="mood" value="stressed"> Stressed</label><br>
             </section>
 
             <section>
                 <h2>Do you prefer guided sessions or self-directed practices?</h2>
-                <label><input type="radio" name="guidance" value="guided"> Guided</label><br>
+                <label><input type="radio" name="guidance" value="guided" required> Guided</label><br>
                 <label><input type="radio" name="guidance" value="self-directed"> Self-directed</label><br>
             </section>
 
             <section>
                 <h2>How long can you dedicate to meditation?</h2>
-                <label><input type="radio" name="duration" value="short"> 5-10 minutes</label><br>
+                <label><input type="radio" name="duration" value="short" required> 5-10 minutes</label><br>
                 <label><input type="radio" name="duration" value="long"> 15-30 minutes</label><br>
             </section>
 
@@ -57,6 +57,38 @@
         <p>&copy; 2024 Meditation Now. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        document.getElementById("meditationQuiz").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from reloading the page
+
+            // Get the selected values
+            const mood = document.querySelector('input[name="mood"]:checked').value;
+            const guidance = document.querySelector('input[name="guidance"]:checked').value;
+            const duration = document.querySelector('input[name="duration"]:checked').value;
+
+            let meditationType = '';
+            let reasoning = '';
+
+            // Determine the meditation recommendation based on answers
+            if (mood === "anxious" && guidance === "guided" && duration === "short") {
+                meditationType = "Loving Kindness Meditation";
+                reasoning = "This type of meditation is great for calming anxiety and fostering positive emotions, especially when you’re short on time.";
+            } else if (mood === "calm" && guidance === "self-directed" && duration === "long") {
+                meditationType = "Mindfulness Meditation";
+                reasoning = "Mindfulness meditation is perfect for maintaining your calm state and staying focused for longer sessions.";
+            } else if (mood === "stressed" && guidance === "guided" && duration === "short") {
+                meditationType = "Body Scan Meditation";
+                reasoning = "Body scan meditation helps release physical tension and is excellent for stress relief in short bursts.";
+            } else {
+                meditationType = "Guided Meditation";
+                reasoning = "Guided meditation is a versatile option for those seeking structure in their practice.";
+            }
+
+            // Display the recommendation
+            document.getElementById("meditationType").textContent = meditationType;
+            document.getElementById("reasoning").textContent = reasoning;
+            document.getElementById("recommendation").classList.remove("hidden"); // Show the recommendation section
+        });
+    </script>
 </body>
 </html>
