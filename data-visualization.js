@@ -1,4 +1,4 @@
-// Meditation Data: Timeline Events (with popularity over time)
+// Meditation Data: Timeline Events
 const meditationHistory = [
     { year: -3000, event: "Ancient Meditation Practices in India", popularity: 10, era: "ancient", description: "Meditation practices were rooted in early spiritual traditions in India." },
     { year: -500, event: "Buddha Introduces Meditation as a Path to Enlightenment", popularity: 20, era: "ancient", description: "Buddha’s teachings on meditation began to spread across Asia, emphasizing mindfulness." },
@@ -8,7 +8,7 @@ const meditationHistory = [
     { year: 2020, event: "Meditation Practices Spread Through Apps and Online Platforms", popularity: 90, era: "modern", description: "Meditation apps like Headspace and Calm bring meditation practices to a global audience." }
 ];
 
-// Prepare Data for Chart.js
+// Prepare Chart Data
 const getChartData = (eraFilter) => {
     let filteredData = meditationHistory;
     if (eraFilter !== 'all') {
@@ -18,11 +18,11 @@ const getChartData = (eraFilter) => {
     return {
         labels: filteredData.map(item => item.year),
         datasets: [{
-            label: 'Meditation Practices Through History', // Updated chart label
+            label: 'Popularity (%) of Meditation Practices Over Time',
             data: filteredData.map(item => item.popularity),
             fill: false,
             borderColor: '#4a3a52',
-            tension: 0.4, // Smooth the line
+            tension: 0.4,
             pointBackgroundColor: '#6a4c6c',
             pointRadius: 6,
             pointHoverRadius: 8
@@ -40,10 +40,9 @@ let chart = new Chart(document.getElementById('meditationTimeline').getContext('
             if (elements.length > 0) {
                 const index = elements[0].index;
                 const selectedEvent = meditationHistory[index];
-                
-                // Drill down and show details
+
                 document.getElementById("eraTitle").textContent = `Event: ${selectedEvent.event}`;
-                document.getElementById("eraDescription").textContent = `${selectedEvent.description} Year: ${selectedEvent.year}, Popularity: ${selectedEvent.popularity}`;
+                document.getElementById("eraDescription").textContent = `${selectedEvent.description} Year: ${selectedEvent.year}, Popularity: ${selectedEvent.popularity}%`;
             }
         },
         plugins: {
@@ -74,7 +73,7 @@ let chart = new Chart(document.getElementById('meditationTimeline').getContext('
                 max: 100,
                 title: {
                     display: true,
-                    text: 'Popularity'
+                    text: 'Popularity (%)'
                 },
                 ticks: {
                     stepSize: 10
@@ -83,15 +82,14 @@ let chart = new Chart(document.getElementById('meditationTimeline').getContext('
         },
         title: {
             display: true,
-            text: 'Meditation Practices Through History' // Updated chart title
+            text: 'Meditation Practices Through History'
         }
     }
 });
 
-// Filter Data based on Selected Era
+// Filter Data Based on Era
 function filterData() {
     const eraFilter = document.getElementById('eraFilter').value;
     chart.data = getChartData(eraFilter);
     chart.update();
 }
-
