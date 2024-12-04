@@ -61,32 +61,33 @@
         document.getElementById("meditationQuiz").addEventListener("submit", function(event) {
             event.preventDefault(); // Prevent the form from reloading the page
 
-            // Get the selected values
-            const mood = document.querySelector('input[name="mood"]:checked').value;
-            const guidance = document.querySelector('input[name="guidance"]:checked').value;
-            const duration = document.querySelector('input[name="duration"]:checked').value;
+            // Array of meditation types and their descriptions
+            const meditations = [
+                {
+                    type: "Loving Kindness Meditation",
+                    reasoning: "This meditation helps foster positive emotions and calm anxiety by cultivating compassion."
+                },
+                {
+                    type: "Guided Meditation",
+                    reasoning: "Guided meditation is perfect for those who prefer structure and support during their practice."
+                },
+                {
+                    type: "Open Awareness Meditation",
+                    reasoning: "This practice encourages non-judgmental observation of thoughts and sensations, promoting mindfulness."
+                },
+                {
+                    type: "Mantra Meditation",
+                    reasoning: "Repeating a mantra can help focus the mind and promote deep relaxation."
+                }
+            ];
 
-            let meditationType = '';
-            let reasoning = '';
-
-            // Determine the meditation recommendation based on answers
-            if (mood === "anxious" && guidance === "guided" && duration === "short") {
-                meditationType = "Loving Kindness Meditation";
-                reasoning = "This type of meditation is great for calming anxiety and fostering positive emotions, especially when you’re short on time.";
-            } else if (mood === "calm" && guidance === "self-directed" && duration === "long") {
-                meditationType = "Mindfulness Meditation";
-                reasoning = "Mindfulness meditation is perfect for maintaining your calm state and staying focused for longer sessions.";
-            } else if (mood === "stressed" && guidance === "guided" && duration === "short") {
-                meditationType = "Body Scan Meditation";
-                reasoning = "Body scan meditation helps release physical tension and is excellent for stress relief in short bursts.";
-            } else {
-                meditationType = "Guided Meditation";
-                reasoning = "Guided meditation is a versatile option for those seeking structure in their practice.";
-            }
+            // Randomly select a meditation
+            const randomIndex = Math.floor(Math.random() * meditations.length);
+            const selectedMeditation = meditations[randomIndex];
 
             // Display the recommendation
-            document.getElementById("meditationType").textContent = meditationType;
-            document.getElementById("reasoning").textContent = reasoning;
+            document.getElementById("meditationType").textContent = selectedMeditation.type;
+            document.getElementById("reasoning").textContent = selectedMeditation.reasoning;
             document.getElementById("recommendation").classList.remove("hidden"); // Show the recommendation section
         });
     </script>
