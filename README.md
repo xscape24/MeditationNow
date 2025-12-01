@@ -2,6 +2,8 @@
 
 **Meditation Now** – A beginner-friendly web application that helps users start and maintain a meditation practice with guided sessions and progress tracking.
 
+<img width="1853" height="853" alt="image" src="https://github.com/user-attachments/assets/0f5e6d29-aa20-44d4-b42b-127801ab3d19" />
+
 ---
 
 ## Technologies
