@@ -23,7 +23,7 @@
 ---
 
 ## Demo
-- Live website: [GitHub Pages link](https://xscape24.github.io/meditation-now/) *(replace with actual link)*
+- Live website: https://lively-stone-0d52be41e.5.azurestaticapps.net/
 
 ---
 
